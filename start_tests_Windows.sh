@@ -6,7 +6,9 @@ sleep 5
 # cd TestAlttrashCSharp
 
 echo "==> Restore test project and run tests..."
-dotnet test  -- NUnit.TestOutputXml = "TestAlttrashCSharp" --results-directory allure-results
+dotnet restore "C:\Users\simina.rendler_altom\Documents\1. Projects\AltTester\LearningC#AltTester\EXAMPLES-CSharp-Standalone-AltTrashCat\EXAMPLES-CSharp-Standalone-AltTrashCat.csproj"
+dotnet build "C:\Users\simina.rendler_altom\Documents\1. Projects\AltTester\LearningC#AltTester\EXAMPLES-CSharp-Standalone-AltTrashCat\EXAMPLES-CSharp-Standalone-AltTrashCat.csproj"
+dotnet test "C:\Users\simina.rendler_altom\Documents\1. Projects\AltTester\LearningC#AltTester\EXAMPLES-CSharp-Standalone-AltTrashCat\EXAMPLES-CSharp-Standalone-AltTrashCat.csproj" -- NUnit.TestOutputXml="TestAlttrashCSharp" --results-directory allure-results
 
 echo "Generate allure html report..."
 allure generate allure-results -o allure-reports
